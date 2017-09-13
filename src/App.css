@@ -8,7 +8,8 @@
 }
 
 .App-header {
-  background-image: url("https://lh3.googleusercontent.com/-LG-a3FTTAuQ/VyoycbI4QsI/AAAAAAAAPso/J7Dt_vsT5HsExFedRvepaOGY-PmJHoKMg/w1024-h538/warpspeed-maythefourth.gif");
+  /* background-image: url("https://lh3.googleusercontent.com/-LG-a3FTTAuQ/VyoycbI4QsI/AAAAAAAAPso/J7Dt_vsT5HsExFedRvepaOGY-PmJHoKMg/w1024-h538/warpspeed-maythefourth.gif"); */
+  background-color: #444;
   height: 150px;
   width: 100%;
   padding: 20px;
