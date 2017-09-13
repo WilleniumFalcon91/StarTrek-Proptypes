@@ -3,13 +3,14 @@
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  /* animation: App-logo-spin infinite 20s linear; */
+  height: 100px;
 }
 
 .App-header {
-  background-color: #222;
+  background-image: url("https://lh3.googleusercontent.com/-LG-a3FTTAuQ/VyoycbI4QsI/AAAAAAAAPso/J7Dt_vsT5HsExFedRvepaOGY-PmJHoKMg/w1024-h538/warpspeed-maythefourth.gif");
   height: 150px;
+  width: 100%;
   padding: 20px;
   color: white;
 }

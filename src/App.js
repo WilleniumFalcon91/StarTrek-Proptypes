@@ -12,8 +12,8 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+          <img src="https://vignette1.wikia.nocookie.net/stexpanded/images/d/d2/UFP_Flag.png/revision/latest?cb=20100211134913" className="App-logo" alt="logo" />
+          <h2>Star Command</h2>
         </div>
         <Planet name="Earth">
           <CrewMember name="Uhuru" rank="Commander" />
