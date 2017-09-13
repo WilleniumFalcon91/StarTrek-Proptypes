@@ -9,10 +9,23 @@ class Spaceship extends Component {
 
     render() {
         const { name, children } = this.props;
+
+        const lifeFormsOnBoard = children.map((child, idx) => {
+            if (child.type.name == "CrewMember") {
+                return child;
+            } else {
+                return (
+                    <div className='alert-alert'>
+                        {child}
+                    </div>
+                );
+            }
+        });
+
         return (
             <div>
                 <h1>{name}</h1>
-                {children}
+                {lifeFormsOnBoard}
             </div>
         )
     }
