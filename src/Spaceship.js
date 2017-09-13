@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 class Spaceship extends Component {
     static propTypes = {
         name: PropTypes.string,
-        children: PropTypes.element.isRequired
+        children: PropTypes.node.isRequired
     };
 
     render() {
