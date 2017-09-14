@@ -9,6 +9,8 @@ export const LOCATIONS = {
     PLANET_THE_SUN: 'PLANET_THE_SUN'
 }
 
+
+
 const planets = (state=[], action) => {
     switch (action.type) {
         case actions.ADD_PLANET:
@@ -16,9 +18,22 @@ const planets = (state=[], action) => {
                 ...state, 
                 {
                     id: action.id,
-                    name: action.name
+                    name: action.name,
+                    crystals: 5,
                 }
             ]
+        case action.REMOVE_CRYSTALS:
+            return state.map( (planet) => (
+                (action.id === planet.id)
+                ? {...planet, crystals: planet.crystals - action.howMany}
+                : planet
+            ));
+        case action.ADD_CRYSTALS:
+            return state.map( (planet) => (
+                (action.id === planet.id)
+                ? {...planet, crystals: planet.crystals + action.howMany}
+                : planet
+            ));
         default:
             return state;
     }
@@ -31,9 +46,22 @@ const ships = (state=[], action) => {
                 ...state,
                 {
                     id: action.id, 
-                    name: action.name
+                    name: action.name,
+                    crystals: 0,
                 } 
             ]
+        case action.REMOVE_CRYSTALS:
+            return state.map( (ship) => (
+                (action.id === ship.id)
+                ? {...ship, crystals: ship.crystals - action.howMany}
+                : ship
+            ));
+        case action.ADD_CRYSTALS:
+            return state.map( (ship) => (
+                (action.id === ship.id)
+                ? {...ship, crystals: ship.crystals + action.howMany}
+                : ship
+            ));
         default:
             return state;
     }
