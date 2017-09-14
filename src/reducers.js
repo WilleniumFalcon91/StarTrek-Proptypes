@@ -115,6 +115,31 @@ const crewMembers = (state=[], action) => {
     }
 }
 
+store.dispatch(addShip('Enterprise', 1000, {}));
+
+const locations = (state={ planet: {}, ships: {}}, action) => {
+    switch (action.type) {
+        case ADD_LOCATION:
+            const newState = {...state};
+            if (action.locationType === LOCATION_SHIP) {
+                newState.ships[action.id] = {
+                    id: action.id,
+                    name: action.name,
+                    resources: action.resources
+                }
+            } else {
+                newState.planets[action.id] = {
+                    id: action.id,
+                    name: action.name,
+                    resources: action.resources
+                }
+            }
+            return newState
+        default:
+            return state;
+    }
+}
+
 export default combineReducers({
     ships,
     crewMembers,
