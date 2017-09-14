@@ -9,6 +9,20 @@ export const LOCATIONS = {
     PLANET_THE_SUN: 'PLANET_THE_SUN'
 }
 
+const planets = (state=[], action) => {
+    switch (action.type) {
+        case actions.ADD_PLANET:
+            return [
+                ...state, 
+                {
+                    id: action.id,
+                    name: action.name
+                }
+            ]
+        default:
+            return state;
+    }
+};
 
 const ships = (state=[], action) => {
     switch (action.type) {
@@ -75,5 +89,6 @@ const crewMembers = (state=[], action) => {
 
 export default combineReducers({
     ships,
-    crewMembers
+    crewMembers,
+    planets
 });

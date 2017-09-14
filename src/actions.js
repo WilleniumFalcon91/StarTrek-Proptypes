@@ -19,6 +19,11 @@
 //     name: "ENTERPRISE",
 //     id: 12345,
 // }
+// {
+//     type: ADD_PLANET,
+//     name: "EARTH",
+//     id: 12345,
+// }
 
 const ADD_MEMBER = 'ADD_MEMBER';
 const BEAM_MEMBER = "BEAM_MEMBER";
