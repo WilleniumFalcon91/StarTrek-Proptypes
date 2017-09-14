@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
-import { LOCATIONS } from './reducers'
+import locations from './reducers'
 
 import actions from "./actions"
 
@@ -22,9 +22,9 @@ window.ADD_SHIP = actions.ADD_SHIP;
 window.ADD_PLANET = actions.ADD_PLANET;
 window.TRANSFER_CRYSTALS = actions.TRANSFER_CRYSTALS;
 
-window.TRANSPORTER_ROOM = LOCATIONS.TRANSPORTER_ROOM;
-window.PLANET_EARTH = LOCATIONS.PLANET_EARTH;
-window.PLANET_THE_SUN = LOCATIONS.PLANET_THE_SUN;
+// window.TRANSPORTER_ROOM = LOCATIONS.TRANSPORTER_ROOM;
+// window.PLANET_EARTH = LOCATIONS.PLANET_EARTH;
+// window.PLANET_THE_SUN = LOCATIONS.PLANET_THE_SUN;
 
 // store.dispatch({
 //     type: window.ADD_SHIP,

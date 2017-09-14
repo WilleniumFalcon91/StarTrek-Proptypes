@@ -1,8 +1,56 @@
 import { combineReducers } from 'redux';
 
-import actions from './actions';
+import * as actions from './actions';
+import * as constants from './constants';
+
+const defaultLocationsState = {
+    planets: {},
+    ships: {}
+};
+
+const locations = (state=defaultLocationsState, action) => {
+    switch (action.type) {
+        case constants.ADD_LOCATION:
+            var newState = {...state};
+            if (action.locationType === constants.LOCATION_SHIP) {
+                newState.ships[action.id] = {
+                    id: action.id,
+                    name: action.name,
+                    resources: action.resources
+                }
+            } else if (action.locationType === constants.LOCATION_PLANET) {
+                newState.planets[action.id] = {
+                    id: action.id,
+                    name: action.name,
+                    resources: action.resources
+                }
+            }
+            return newState
+        case constants.ADD_RESOURCE:
+            var newState = {...state};
+            let locationThatIWantToChange;
+            for (let locationType in newState.locations) {
+                for (let location in locationType) {
+                    if (location.id === action.id) {
+                        locationThatIWantToChange = location;
+                    }
+                }
+            }
+            if (locationThatIWantToChange) {
+                locationThatIWantToChange.resources = {
+                    ...locationThatIWantToChange.resources,
+                    [action.resource]: locationThatIWantToChange.resources[action.resource] + action.howMany
+                }
+            }
+            return newState;
+        default:
+            return state;
+    }
+}
 
 
+
+/*
 export const LOCATIONS = {
     TRANSPORTER_ROOM: 'TRANSPORTER_ROOM',
     PLANET_EARTH: 'PLANET_EARTH',
@@ -139,9 +187,7 @@ const locations = (state={ planet: {}, ships: {}}, action) => {
             return state;
     }
 }
-
+*/
 export default combineReducers({
-    ships,
-    crewMembers,
-    planets
+    locations,
 });
